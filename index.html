@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chọn Quà</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    text-align:center;
+    background:#f5f5f5;
+}
+
+h1{
+    margin-top:30px;
+}
+
+.container{
+    display:flex;
+    justify-content:center;
+    gap:50px;
+    margin-top:40px;
+}
+
+.choice{
+    cursor:pointer;
+}
+
+.choice img{
+    width:220px;
+    height:220px;
+    object-fit:cover;
+    object-position:top;
+    border-radius:15px;
+    box-shadow:0 0 10px rgba(0,0,0,0.3);
+    transition:0.3s;
+}
+
+.choice img:hover{
+    transform:scale(1.05);
+}
+
+#videoBox{
+    display:none;
+    margin-top:30px;
+}
+
+video{
+    width:700px;
+    max-width:90%;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🎁 Hãy chọn một phần quà 🎁</h1>
+
+<div class="container">
+
+    <div class="choice" onclick="showVideo()">
+        <img src="anh1.jpg">
+        <h3>Quà số 1</h3>
+    </div>
+
+    <div class="choice" onclick="showVideo()">
+        <img src="anh2.jpg">
+        <h3>Quà số 2</h3>
+    </div>
+
+</div>
+
+<div id="videoBox">
+    <h2>🎉 Chúc mừng!</h2>
+
+    <video id="memeVideo" controls autoplay>
+        <source src="video.mp4" type="video/mp4">
+    </video>
+</div>
+
+<script>
+function showVideo(){
+    document.querySelector(".container").style.display="none";
+    document.getElementById("videoBox").style.display="block";
+
+    document.getElementById("memeVideo").play();
+}
+</script>
+
+</body>
+</html>
